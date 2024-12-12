@@ -1,0 +1,11 @@
+{% extends "MättöMittari/base.html" %}
+
+{% block content %}
+    <p><a href="{% url 'MättöMittari:ruoka' ruoka.id %}">{{ ruoka }}</a></p>
+    <p>Lisää arvostelu:</p>
+    <form action="{% url 'MättöMittari:arvio' ruoka.id %}" method='post'>
+        {% csrf_token %}
+        {{ form.as_div }}
+        <button name='lisää'>Lisää</button>
+    </form>
+{% endblock content %}

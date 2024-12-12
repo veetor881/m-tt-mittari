@@ -1,0 +1,20 @@
+<p>
+    <a href="{% url 'MättöMittari:index' %}">MättöMittari</a> -
+    <a href="{% url 'MättöMittari:ruoat' %}">Ruoat</a> -
+    {% if user.is_authenticated %}
+    Hei, {{ user.username }}.
+    {% else %}
+        <a href="{% url 'users:register' %}">Luo käyttäjä</a> -
+        <a href="{% url 'users:login' %}">Kirjaudu sisään</a>
+    {% endif %}
+</p>
+
+{% block content %}{% endblock content %}
+
+{% if user.is_authenticated %}
+    <hr />
+    <form action="{% url 'users.logout' %}" method='post'>
+        {% csrf_token %}
+        <button name='submit'>Kirjaudu ulos</button>
+    </form>
+{% endif %}

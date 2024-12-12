@@ -1,0 +1,16 @@
+{% extends 'MättöMittari/base.html' %}
+
+{% block content %}
+    <p>Ruoat</p>
+    <ul>
+        {% for ruoka in ruoat %}
+        <li>
+            <a href="{% url 'MättöMittari:ruoka' ruoka.id %}">
+                {{ ruoka.text }}
+            </a>
+        </li>
+        {% empty %}
+        <li>Ruokia ei vielä lisätty</li>
+        {% endfor %}
+    </ul>
+{% endblock content %}

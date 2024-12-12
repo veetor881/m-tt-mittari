@@ -1,0 +1,11 @@
+{% extends 'MättöMittari/base.html' %}
+{% block content %}
+    {% if form.errors %}
+    <p>Käyttäjätunnus tai salasana on väärin. Yritä uudelleen.</p>
+    {% endif %}
+    <form action="{% url 'users:login' %}" method='post'>
+        {% csrf_token %}
+        {{ form.as_div }}
+        <button name="submit">Kirjaudu sisään</button>
+    </form>
+{% endblock content %}

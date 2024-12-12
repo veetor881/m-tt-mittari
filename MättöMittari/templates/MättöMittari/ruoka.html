@@ -1,0 +1,24 @@
+{% extends "MättöMittari/base.html" %}
+{% block content %}
+    <p>Ruoka: {{ ruoka }}</p>
+    <p>Arviot:</p>
+    <p>
+        <a href="{% url 'MättöMittari:arvio' ruoka.id %}">Lisää arvostelu</a>
+    </p>
+    
+    <ul>
+        {% for arvio in arviot %}
+        <li>
+            <p>{{ arvio.date_added|date:'M d, Y H:i' }}</p>
+
+            <p>{{ arvio.text|linebreaks }}</p>
+            <p>
+                <a href="{% url 'MättöMittari:muuta_arvio' arvio.id %}">Muokkaa arvostelua</a>
+            </p>
+        </li>
+        {% empty %}
+        <li>Arvioita ei vielä ole.</li>
+        {% endfor %}
+    </ul>
+
+{% endblock content %}
