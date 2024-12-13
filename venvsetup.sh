@@ -1,10 +1,10 @@
 # Create the virtual environment
 echo "Creating virtual environment..."
-virtualenv mättö_env
+virtualenv matto_env
 
 # Activate the virtual environment
 echo "Activating virtual environment..."
-source mättö_env/bin/activate
+source matto_env/bin/activate
 
 # Install dependencies
 echo "Installing dependencies from requirements.txt..."
