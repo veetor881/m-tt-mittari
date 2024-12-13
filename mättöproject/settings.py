@@ -32,7 +32,7 @@ ALLOWED_HOSTS = []
 
 LOGIN_REDIRECT_URL = 'MättöMittari:index'
 LOGOUT_REDIRECT_URL = 'MättöMittari:index'
-
+LOGIN_URL = 'users:login'
 # Application definition
 
 INSTALLED_APPS = [

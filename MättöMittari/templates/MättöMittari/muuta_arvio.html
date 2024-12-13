@@ -8,5 +8,9 @@
         {{ form.as_div }}
         <button name="muuta">Tallenna muutokset</button>
     </form>
+    <form action="{% url 'MättöMittari:poista_arvio' arvio.id %}">
+        {% csrf_token %}
+        <button name="poista">Poista arvostelu</button>
+    </form>
 
     {% endblock content %}

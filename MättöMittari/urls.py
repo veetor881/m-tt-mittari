@@ -8,4 +8,5 @@ urlpatterns =[
     path('ruoat/<int:ruoka_id>/', views.ruoka, name='ruoka'),
     path('arvio/<int:ruoka_id>/', views.arvio, name='arvio'),
     path('muuta_arvio/<int:arvio_id>/', views.muuta_arvio, name='muuta_arvio'),
+    path('poista_arvio/<int:arvio_id>/', views.poista_arvio, name='poista_arvio'),
 ]
