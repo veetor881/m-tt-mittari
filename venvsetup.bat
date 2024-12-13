@@ -1,11 +1,11 @@
 @echo off
 REM Create the virtual environment
 echo Creating virtual environment...
-python -m venv mättö_env
+python -m venv matto_env
 
 REM Activate the virtual environment
 echo Activating virtual environment...
-call mättö_env\Scripts\activate.bat
+call matto_env\Scripts\activate.bat
 
 REM Install dependencies
 echo Installing dependencies from requirements.txt...
